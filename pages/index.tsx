@@ -1,12 +1,13 @@
 import type { NextPage, NextPageContext } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import { mainUrl } from '../api/endpoint'
 import styles from '../styles/Home.module.css'
 
 Home.getInitialProps = async (ctx: NextPageContext) => {
   let tacosJson: any = []
 
-  tacosJson = await getFetchData('http://localhost:3000' + '/api/tacos', ctx)
+  tacosJson = await getFetchData(mainUrl + '/api/tacos', ctx)
 
   return {
       tacos: tacosJson,

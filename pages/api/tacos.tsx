@@ -11,8 +11,5 @@ export default function handler(
         return res.status(405).json({ res: false, message: "Código de estado de respuesta no permitido" })
     }
 
-    console.log(aTacos);
-    
-
     res.status(200).json({ tacos: aTacos, res: true })
 }
